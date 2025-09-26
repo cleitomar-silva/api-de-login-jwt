@@ -53,24 +53,26 @@ Endpoint:
     
 GET http://localhost/api-de-login-jwt/api/usuario/listar-todos
 
-Headers necessários:
+**Headers necessários:**
 Key: x-access-token
+
 Value: 'token retornado no login'
 
 
 
 
 # Estrutura do Projeto
-  app/
-      Controllers/   
-      Helpers/
-      Libraries/
-      Middlewares/
-      Models/
-      Views/
-  public/
-      css/
-      files/
-      img/
-      js/
+app/
+Controllers/   
+Helpers/
+Libraries/
+Middlewares/
+Models/
+Views/
+
+public/
+css/
+files/
+img/
+js/
    
