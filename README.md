@@ -26,7 +26,7 @@ Rotas são encontradas em `app/rotas.php`
 
 ### Estrutura de rota
 
-Cada rota é composta por:
+###
 
 **Caminho na web:** `{descricao}/{descricao}/{:param}/{:param}`
 
