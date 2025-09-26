@@ -28,7 +28,7 @@ Rotas são encontradas em `app/rotas.php`
 
 Cada rota é composta por:
 
-**Caminho:** `{descricao}/{descricao}/{:param}/{:param}`
+**Caminho na web:** `{descricao}/{descricao}/{:param}/{:param}`
 
 - Exemplo 1: `usuario/login`
 
