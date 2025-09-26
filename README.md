@@ -16,9 +16,42 @@ Ele serve como base para sistemas que precisam de login seguro, controle de sess
 git clone https://github.com/cleitomar-silva/api-de-login-jwt.git
 
 # Configuração
-  1. Verifique o arquivo `public/.htaccess` 
-  2. Importante: o nome da pasta onde o projeto está deve corresponder ao caminho configurado no .htaccess 
-  3. Configurações do banco de dados podem ser encontradas em `app/Libraries/Database.php`.
+1. Verifique o arquivo `public/.htaccess`
+2. Importante: o nome da pasta onde o projeto está deve corresponder ao caminho configurado no .htaccess
+3. Configurações do banco de dados podem ser encontradas em `app/Libraries/Database.php`.
+
+## ROTAS
+
+Rotas são encontradas em `app/rota.php`
+
+### Estrutura de uma rota
+
+Cada rota é composta por:
+
+**Caminho:** `{descricao}/{descricao}/{:param}/{:param}`
+
+- Exemplo 1: `usuario/login`
+
+- Exemplo 2: `usuario/encontrar/:id`
+
+**Parâmetros da rota:**
+
+- `metodoHttp` → Método HTTP aceito (`GET`, `POST`, `PUT`, `DELETE`, etc.)
+- `controller` → Controller que será utilizado
+- `metodo` → Método dentro do controller que será chamado
+- `middleware` → Define se precisa autenticação:
+    - `[]` → Não precisa autenticação
+    - `['AuthMiddleware']` → Precisa autenticação
+
+```
+'usuario/listar-todos' => [
+    'metodoHttp' => 'GET',
+    'controller' => 'UsuarioController',
+    'metodo' => 'showAll',
+    'middleware' => ['AuthMiddleware']
+],
+```
+
 
 
 ##  Exemplos de Rotas
@@ -53,7 +86,7 @@ Retorno esperado:
 
 ## Listar Usuários
 Endpoint:
-    
+
 GET http://localhost/api-de-login-jwt/api/usuario/listar-todos
 
 **Headers necessários:**

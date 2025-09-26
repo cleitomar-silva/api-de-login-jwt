@@ -14,14 +14,18 @@ class Rota
     {
         $url = $this->url() ? $this->url() : [];
 
-        // Monta a chave da rota usando os dois primeiros segmentos
-        $caminho = isset($url[0]) ? $url[0] : '';
-        if (isset($url[1])) {
-            $caminho .= '/' . $url[1];
-        }
+        // Usa toda a URL como caminho
+        $caminho = implode('/', $url);
 
-        // Busca a rota na tabela
+        // Busca a rota na tabela (incluindo parâmetros)
         $rota = $this->destino($caminho);
+
+        // Valida o método HTTP
+        $metodoRequisicao = $_SERVER['REQUEST_METHOD']; // GET, POST, PUT, DELETE
+        if (isset($rota['metodoHttp']) && $rota['metodoHttp'] !== $metodoRequisicao) {
+            http_response_code(405);
+            die("Método {$metodoRequisicao} não permitido para esta rota.");
+        }
 
         // Executa middlewares, se houver
         if (!empty($rota['middleware'])) {
@@ -42,9 +46,8 @@ class Rota
         $this->controlador = new $rota['controller'];
         $this->metodo = $rota['metodo'];
 
-        // Remove segmentos usados e mantém parâmetros extras
-        unset($url[0], $url[1]);
-        $this->parametros = $url ? array_values($url) : [];
+        // Usa os parâmetros extraídos da rota dinâmica
+        $this->parametros = $rota['parametros'] ?? [];
 
         // Chama o método do controller com parâmetros
         call_user_func_array([$this->controlador, $this->metodo], $this->parametros);
@@ -61,25 +64,32 @@ class Rota
         return [];
     }
 
-    // Define tabela de rotas
+    // Define tabela de rotas com suporte a parâmetros dinâmicos
     private function destino($caminho = '')
     {
-        $rotas = [
-            // Usuario
-            'usuario/login'       => ['controller' => 'UsuarioController', 'metodo' => 'login', 'middleware' => []],
-            'usuario/listar-todos'=> ['controller' => 'UsuarioController', 'metodo' => 'showAll', 'middleware' => ['AuthMiddleware']],
-            'usuario/encontrar'   => ['controller' => 'UsuarioController', 'metodo' => 'findUserId', 'middleware' => ['AuthMiddleware']],
+        // Inclui o arquivo de rotas e obtém o array
+        $rotas = include __DIR__ . '/../rotas.php';
 
+        // Busca a rota correspondente, incluindo parâmetros
+        foreach ($rotas as $rotaPadrao => $dados) {
+            $rotaRegex = preg_replace('/:\w+/', '(\w+)', $rotaPadrao);
+            $rotaRegex = "#^" . $rotaRegex . "$#";
 
-        ];
-
-        $key = trim($caminho, '/');
-
-        if (isset($rotas[$key])) {
-            return $rotas[$key];
+            if (preg_match($rotaRegex, $caminho, $matches)) {
+                array_shift($matches); // remove a string completa
+                $dados['parametros'] = $matches;
+                return $dados;
+            }
         }
 
         // rota padrão
-        return ['controller' => 'PaginasController', 'metodo' => 'index', 'middleware' => []];
+        return [
+            'controller' => 'PaginasController',
+            'metodo' => 'index',
+            'middleware' => [],
+            'metodoHttp' => 'GET',
+            'parametros' => []
+        ];
     }
+
 }
