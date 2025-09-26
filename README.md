@@ -54,12 +54,10 @@ Endpoint:
 GET http://localhost/api-de-login-jwt/api/usuario/listar-todos
 
 **Headers necessários:**
+- Key: x-access-token
+- Value: 'token retornado no login'
 
-Key: x-access-token
-
-Value: 'token retornado no login'
-
-
+---
 
 
 ## Estrutura do Projeto
