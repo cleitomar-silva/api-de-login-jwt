@@ -3,7 +3,7 @@
 Este projeto é uma API em PHP que implementa autenticação utilizando **Tokens (JWT)**.  
 Ele serve como base para sistemas que precisam de login seguro, controle de sessão e gerenciamento de usuários.
 
-## 🚀 Requisitos
+## Requisitos
 
 - PHP >= 7.4
 - Servidor Apache com `mod_rewrite` habilitado
@@ -22,9 +22,9 @@ git clone https://github.com/cleitomar-silva/api-de-login-jwt.git
 
 ## ROTAS
 
-Rotas são encontradas em `app/rota.php`
+Rotas são encontradas em `app/rotas.php`
 
-### Estrutura de uma rota
+### Estrutura de rota
 
 Cada rota é composta por:
 
@@ -34,10 +34,10 @@ Cada rota é composta por:
 
 - Exemplo 2: `usuario/encontrar/:id`
 
-##### Exemplo de Requisição
+#### Exemplo de Requisição
 `GET http://localhost/api-de-login-jwt/api/usuario/encontrar/160`
 
-**Headers:**
+#### Headers:
  - **x-access-token: SEU_TOKEN_AQUI**
 
 
