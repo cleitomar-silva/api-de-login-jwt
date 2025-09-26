@@ -36,6 +36,7 @@ Cada rota é composta por:
 
 ##### Exemplo de Requisição
 `GET http://localhost/api-de-login-jwt/api/usuario/encontrar/160`
+
 **Headers:**
  - **x-access-token: SEU_TOKEN_AQUI**
 
