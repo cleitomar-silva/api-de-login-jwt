@@ -1,0 +1,31 @@
+.nav-pills .nav-link {
+  color: #212529;
+}
+
+.nav-link:hover {
+  color: #c5c5c5;
+}
+
+.nav-menu {
+  background-color: #337ab7!important;
+}
+
+.py-3 {
+  padding: 0!important;
+}
+
+.conteudo {
+  padding: 20px;
+}
+
+.nav-link-header {
+  color: #fff;
+}
+
+.nav-link-header:hover {
+  color: #fff;
+}
+
+.mt-check {
+  margin-top: 2.5rem!important
+}

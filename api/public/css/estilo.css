@@ -1,0 +1,144 @@
+#preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    background: #ffffff82;
+}
+
+#statusPre{
+
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -300px 0 0 -450px;
+    background:url(../img/Rolling.gif) center no-repeat;
+}
+
+
+.botao-personalizado
+{
+  /*  background: #0e8c8c!important;
+    color: white!important;
+    border-radius: unset!important;
+    padding: 4rem!important;
+    margin-right: 5rem!important;
+    width: 20rem!important; */
+
+  /*  background: #0e7b8c!important;
+    color: white!important; */
+    margin-right: 5rem!important;
+    width: 20rem!important;
+    border-radius: 5px!important;
+    font-size: 25px;
+    padding: 2rem 0 2rem 0!important;
+
+    border: 3px solid #337ab7!important;
+    color: #337ab7!important;
+
+
+}
+
+@media only screen and (max-width: 1366px) {
+    .botao-personalizado
+    {
+
+        margin-right: 1rem!important;
+        width: 18rem!important;
+
+    }
+}
+
+.botao-personalizado:hover
+{
+    background: #337ab7!important;
+    color: white!important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.display-vertical{
+    display: grid!important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.borda-red{
+    border: 2px red solid;
+}
+
+.margin-left-7
+{
+    margin-left: 7px;
+}
+
+.margin-left-20
+{
+    margin-left: 20px;
+}
+
+.margin-left-10
+{
+    margin-left: 10px;
+}
+
+.margin-right-190
+{
+    margin-right: 190px!important;
+}
+
+
+.estilo-desabilitado{
+    background: #e9ecef;
+}
+
+.botao-editar-suave{
+   /* background: white!important;*/
+    color: white!important;
+    text-decoration: none!important;
+    border-radius: 3px!important;
+    padding: 3px!important;
+}
+
+.botao-editar-suave:hover{
+    color: black!important;
+}
+
+.botao-editar-azul:hover{
+    color: black!important;
+}
+
+
+.fundo-atencao{
+    background: #eb4d4b!important;
+    color: white!important;
+}
+
+.pt-34px
+{
+    padding-top: 34px;
+}
+
+.c-white{
+    color: white;
+}
+
+.fundo-verde{
+    background: #51b733;
+}
+
+
+
+
