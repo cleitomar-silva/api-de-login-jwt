@@ -34,23 +34,22 @@ Cada rota é composta por:
 
 - Exemplo 2: `usuario/encontrar/:id`
 
-**Parâmetros da rota:**
-
-- `metodoHttp` → Método HTTP aceito (`GET`, `POST`, `PUT`, `DELETE`, etc.)
-- `controller` → Controller que será utilizado
-- `metodo` → Método dentro do controller que será chamado
-- `middleware` → Define se precisa autenticação:
-  - `[]` → Não precisa autenticação
-  - `['AuthMiddleware']` → Precisa autenticação
-
+**configuração da rota:**
+ 
 ```
-'usuario/listar-todos' => [
-    'metodoHttp' => 'GET',
-    'controller' => 'UsuarioController',
-    'metodo' => 'showAll',
-    'middleware' => ['AuthMiddleware']
-],
+Route::get('usuario/encontrar/:id', [UsuarioController::class, 'findUserId'])->middleware('AuthMiddleware');
 ```
+- `usuario/encontrar/:id` → O `:id` é um parâmetro dinâmico que será passado para o método do controller.
+
+- `GET` → Esse endpoint só aceita requisições do tipo GET.
+
+- `UsuarioController` → O controller responsável por tratar a rota.
+- 
+- `findUserId` → Método dentro do controller que será chamado
+
+- `middleware('AuthMiddleware')` → Define que o usuário precisa estar autenticado para acessar essa rota.
+
+
 
 
 
@@ -79,7 +78,7 @@ Retorno esperado:
     "id": 160
   },
   "type": "sucesso",
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE2MCwiZW1wcmVzYUlkIjozLCJpYXQiOjE3NTg4OTEyNDEsImV4cCI6MTc1ODkyMDA0MX0.txv8YspG6IoHJRXJ7r1KeJV7VqzlW9nWbIG6Y111ixo",
+  "token": "eyJ0eXAiRXJ7r1KeJV7VqzlW9nWbIG6Y111ixo",
   "permissoes": ""
 }
 ```

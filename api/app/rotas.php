@@ -1,9 +1,6 @@
 <?php
-return [
-    // Usuario
-    'usuario/login'         => ['metodoHttp' => 'POST', 'controller' => 'UsuarioController', 'metodo' => 'login', 'middleware' => []],
-    'usuario/listar-todos'  => ['metodoHttp' => 'GET', 'controller' => 'UsuarioController', 'metodo' => 'showAll', 'middleware' => ['AuthMiddleware']],
-    'usuario/encontrar/:id' => ['metodoHttp' => 'GET', 'controller' => 'UsuarioController', 'metodo' => 'findUserId', 'middleware' => ['AuthMiddleware']],
 
-    //
-];
+// Usuário
+Route::post('usuario/login', [UsuarioController::class, 'login']);
+Route::get('usuario/listar-todos', [UsuarioController::class, 'showAll'])->middleware('AuthMiddleware');
+Route::get('usuario/encontrar/:id', [UsuarioController::class, 'findUserId'])->middleware('AuthMiddleware');
