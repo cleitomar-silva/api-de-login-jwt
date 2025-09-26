@@ -40,8 +40,8 @@ Cada rota é composta por:
 - `controller` → Controller que será utilizado
 - `metodo` → Método dentro do controller que será chamado
 - `middleware` → Define se precisa autenticação:
-    - `[]` → Não precisa autenticação
-    - `['AuthMiddleware']` → Precisa autenticação
+  - `[]` → Não precisa autenticação
+  - `['AuthMiddleware']` → Precisa autenticação
 
 ```
 'usuario/listar-todos' => [
