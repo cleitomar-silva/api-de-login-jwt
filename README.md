@@ -62,17 +62,20 @@ GET http://localhost/api-de-login-jwt/api/usuario/listar-todos
 
 ## Estrutura do Projeto
 
-app/```
-  Controllers/```
-  Helpers/```
-  Libraries/```
-  Middlewares/```
-  Models/```
-  Views/```
+```
+app/
+  Controllers/
+  Helpers/
+  Libraries/
+  Middlewares/
+  Models/
+  Views/
 
-public/```
-  css/```
-  files/```
-  img/```
-  js/```
+public/
+  css/
+  files/
+  img/
+  js/
+```
+
    
