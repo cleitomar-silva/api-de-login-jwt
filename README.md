@@ -29,7 +29,7 @@ git clone https://github.com/cleitomar-silva/api-de-login-jwt.git
 POST http://localhost/api-de-login-jwt/api/usuario/login
 
 **Body (JSON):**
-```json```
+```json
 {
   "login": "cleitomar",
   "password": "senha123"
@@ -46,7 +46,7 @@ Retorno esperado:
   "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE2MCwiZW1wcmVzYUlkIjozLCJpYXQiOjE3NTg4OTEyNDEsImV4cCI6MTc1ODkyMDA0MX0.txv8YspG6IoHJRXJ7r1KeJV7VqzlW9nWbIG6Y111ixo",
   "permissoes": ""
 }
-
+```
 
 ## Listar Usuários
 Endpoint:
