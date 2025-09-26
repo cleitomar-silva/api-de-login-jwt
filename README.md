@@ -34,9 +34,11 @@ POST http://localhost/api-de-login-jwt/api/usuario/login
   "login": "cleitomar",
   "password": "senha123"
 }
+```
 
 Retorno esperado:
 
+```
 {
   "user": {
     "nome": "Cleitomar",
