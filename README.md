@@ -18,6 +18,7 @@ git clone https://github.com/cleitomar-silva/api-de-login-jwt.git
 # Configuração
   1. Verifique o arquivo public/.htaccess 
   2. Importante: o nome da pasta onde o projeto está deve corresponder ao caminho configurado no .htaccess 
+  3. Configurações do banco de dados podem ser encontradas em `app/Libraries/Database.php`.
 
 
 ##  Exemplos de Rotas

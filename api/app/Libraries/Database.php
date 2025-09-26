@@ -1,6 +1,6 @@
 <?php
 
-/* senha banco producao -  9ZV3%Nr#3mY7 */
+
 
 class Database
 {
