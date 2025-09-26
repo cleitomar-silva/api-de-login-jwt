@@ -34,6 +34,12 @@ Cada rota é composta por:
 
 - Exemplo 2: `usuario/encontrar/:id`
 
+##### Exemplo de Requisição
+`GET http://localhost/api-de-login-jwt/api/usuario/encontrar/160`
+**Headers:**
+ - **x-access-token: SEU_TOKEN_AQUI**
+
+
 **configuração da rota:**
  
 ```
@@ -44,7 +50,7 @@ Route::get('usuario/encontrar/:id', [UsuarioController::class, 'findUserId'])->m
 - `GET` → Esse endpoint só aceita requisições do tipo GET.
 
 - `UsuarioController` → O controller responsável por tratar a rota.
-- 
+
 - `findUserId` → Método dentro do controller que será chamado
 
 - `middleware('AuthMiddleware')` → Define que o usuário precisa estar autenticado para acessar essa rota.
@@ -69,7 +75,7 @@ POST http://localhost/api-de-login-jwt/api/usuario/login
 }
 ```
 
-Retorno esperado:
+**Retorno esperado:**
 
 ```
 {
@@ -84,7 +90,7 @@ Retorno esperado:
 ```
 
 ## Listar Usuários
-Endpoint:
+**Endpoint:**
 
 GET http://localhost/api-de-login-jwt/api/usuario/listar-todos
 
